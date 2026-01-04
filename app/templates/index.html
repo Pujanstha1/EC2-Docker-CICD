@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Manager</title>
+</head>
+<body>
+    <h2>Add Product</h2>
+
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Product name" required>
+        <input type="text" name="description" placeholder="Description">
+        <button type="submit">Add</button>
+    </form>
+
+    <hr>
+
+    <h2>Product List</h2>
+
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - {{ product.description }}
+                <form action="/delete/{{ product.id }}" method="post" style="display:inline;">
+                    <button type="submit">❌</button>
+                </form>
+            </li>
+        {% else %}
+            <li>No products yet</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
