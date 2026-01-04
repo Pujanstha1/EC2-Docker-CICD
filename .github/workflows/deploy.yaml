@@ -38,8 +38,8 @@ jobs:
       - name: Pull code and run Docker container
         run: |
           ssh  ubuntu@$SERVER_IP -i mykey.pem << 'EOF'
-            APP_DIR="member-manager"
-            REPO_URL="https://github.com/amitgiri-13/cicd-docker-ec2.git"
+            APP_DIR="Product-List"
+            REPO_URL="https://github.com/Pujanstha1/EC2-Docker-CICD.git"
 
             # Check if repo exists
             if [ -d ~/$APP_DIR/.git ]; then
