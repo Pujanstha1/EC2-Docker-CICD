@@ -12,6 +12,7 @@ jobs:
     env:
       SERVER_IP: ${{ vars.SERVER_IP }}
 
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
