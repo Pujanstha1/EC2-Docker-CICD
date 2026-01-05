@@ -42,7 +42,7 @@ jobs:
           ssh  ec2-user@$SERVER_IP -i mykey.pem << 'EOF'
             APP_DIR="Product-List"
             REPO_URL="https://github.com/Pujanstha1/EC2-Docker-CICD.git"
-            # test
+          
             # Check if repo exists
             if [ -d ~/$APP_DIR/.git ]; then
               echo "Repo exists. Pulling latest changes..."
@@ -57,5 +57,5 @@ jobs:
 
             # Build and run Docker containers
             docker compose pull
-            docker compose up --detach --build
+            docker compose up -d --build
           EOF
