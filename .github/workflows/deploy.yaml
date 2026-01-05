@@ -39,6 +39,8 @@ jobs:
 
       - name: Pull code and run Docker container
         run: |
+          nc -zv $SERVER_IP 22
+          echo $?
           ssh  ubuntu@$SERVER_IP -i mykey.pem << 'EOF'
             APP_DIR="Product-List"
             REPO_URL="https://github.com/Pujanstha1/EC2-Docker-CICD.git"
